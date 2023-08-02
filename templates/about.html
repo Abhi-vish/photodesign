@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<style>
+.hell {
+  font-weight: 500;
+}
+.info {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: justify;
+}
+
+</style>
+
+<div
+  class="container m-auto pt-4"
+  style="display: flex; justify-content: space-evenly">
+  <div class="container font-italic" style="width: 100%;">
+    <h3 class="fs-2 text-center pb-3">About us</h3>
+    <p class="text-center pb-5" style="font-weight: 500;">
+      Every picture tells a story! Well, if it is struggling to tell one; we will build a script and help it narrate a story you thought it wasn’t there.
+    </p>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          
+    <p class="info hell">Hello there,</p>
+    <p class="info">Welcome to our Photo Editing Freelancer!</p>
+    
+    <p class="info">At our Photo Editing Freelancer, we are passionate about transforming ordinary photos into extraordinary masterpieces. We understand the importance of visual appeal in today's digital world, where captivating images can make a significant impact on your personal or business brand.</p>
+    <p class="info">With years of experience and a keen eye for detail, we specialize in providing top-notch photo editing services to clients worldwide. Whether you are an individual, a small business owner, or a professional photographer, we are here to cater to your unique editing needs.</p>
+    <p class="info">Our mission is to bring your vision to life through meticulous attention to detail, creative expertise, and advanced editing techniques. We offer a wide range of services, including but not limited to:</p>
+        </div>
+        <div class="col-sm">
+          <div class="img" style="display: flex; justify-content: center;">
+            <img style="width: 650px;" src="{% static 'img/about-us-01.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <ul style="list-style: decimal; font-size: 1.1rem;">
+      {% for data2 in aboutdata %}
+      <li>{{data2.desc | safe}}</li>
+      {% endfor %}
+    </ul>
+    <p class="info">What sets us apart is our commitment to delivering high-quality results, excellent customer service, and quick turnaround times. We understand the importance of meeting deadlines and ensuring your satisfaction with the final product.</p>
+    <p class="info">So, whether you need to enhance personal photos, elevate your business visuals, or collaborate on a creative project, our Photo Editing Freelancer is here to exceed your expectations. Get in touch with us today, and let's bring your photos to life with our exceptional editing skills!</p>
+
+  </div>
+</div>
+
+{% endblock %}
+
+

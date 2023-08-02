@@ -1,0 +1,102 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+{% for service in serData %}
+<div class="container pt-5" style="display: flex; justify-content: center;">
+  <div class="row">
+    <div class="col-sm">
+      <img style="width: 65vh; " src="/media/{{service.image}}" alt="Image Retouching">
+    </div>
+    <div class="col-sm">
+      <h2 class="fs-1">{{service.title}}</h2>
+      <p style="font-weight: 300;">{{service.desc | safe}}</p>
+      <a href="{% url 'freetrial' %}">
+      <label type="button" class="btn btn-danger p-2 mt-3">Free Trial</label>
+    </a>
+    </div>
+  </div>
+</div>
+<h3 class="text-center p-5">{{service.title1 | safe}}</h3>
+
+<div class="container pb-3" style="display: flex; justify-self: center;">
+  <div class="row">
+    <div class="col-sm">
+      
+      <p> {{service.desc1 | safe}}</p>
+    </div>
+    <div class="col-sm">
+      <img class="pb-4" style="width: 60vh " src="/media/{{service.image1}}" alt="Image Retouching">
+    </div>
+  </div>
+</div>
+
+<div class="container pb-3" style="display: flex; justify-self: center;">
+  <div class="row">
+    <div class="col-sm">
+      
+      <p> {{service.desc2 | safe}}</p>
+    </div>
+    <div class="col-sm">
+      <img class="pb-4" style="width: 60vh " src="/media/{{service.image2}}" alt="Image Retouching">
+    </div>
+  </div>
+</div>
+
+<div class="container pb-3" style="display: flex; justify-self: center;">
+  <div class="row">
+    <div class="col-sm">
+      
+      <p> {{service.desc3 | safe}}</p>
+    </div>
+    <div class="col-sm">
+      <img class="pb-4" style="width: 60vh " src="/media/{{service.image3}}" alt="Image Retouching">
+    </div>
+  </div>
+</div>
+
+<div class="container pb-3" style="display: flex; justify-self: center;">
+  <div class="row">
+    <div class="col-sm">
+      
+      <p> {{service.desc4 | safe}}</p>
+    </div>
+    <div class="col-sm">
+      {% if service.image4 %}
+      <img class="pb-4" style="width: 60vh " src="/media/{{service.image4}}" alt="Image Retouching">
+      {% else %}
+      <p></p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="container pb-3" style="display: flex; justify-self: center;">
+  <div class="row">
+    <div class="col-sm">
+      <p> {{service.desc5 | safe}}</p>
+    </div>
+    <div class="col-sm">
+      {% if service.image5 %}
+      <img class="pb-4" style="width: 60vh " src="/media/{{service.image5}}" alt="Image Retouching">
+      {% else %}
+      <p></p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="container pb-3" style="display: flex; justify-self: center;">
+  <div class="row">
+    <div class="col-sm">
+      <p> {{service.desc6 | safe}}</p>
+    </div>
+    <div class="col-sm">
+      {% if service.image6 %}
+      <img class="pb-4" style="width: 60vh " src="/media/{{service.image6}}" alt="Image Retouching">
+      {% else %}
+      <p></p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

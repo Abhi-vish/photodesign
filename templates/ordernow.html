@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    p { 
+      display: flex; 
+      justify-content:flex-start;
+    }
+    .imglst {
+        display: flex;
+        justify-content: center;
+    }
+    .imglst li {
+        list-style: none;
+        padding: 10px;
+    }
+    .imglst li img {
+        width: 200px;
+    }
+  </style>
+ 
+  <form method="POST" action="{% url 'ordernow' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container m-auto pt-4 p-5" style="display: flex; justify-content: space-evenly; background-color:  #f5f5f5;">
+      <div class="row">
+        <div class="p-3" style="width: 60vh;">
+          <div class="mb-3">
+            <label for="name" class="form-label px-2 fst-italic fs-5">Dropdown <span style="color: red;">*</span></label>
+            <select class="form-select"style="height: 50px; border: 2px solid black;" aria-label="Default select example" name="service2" id="findus">
+              <option value="Clipping Path">Clipping Path</option>
+              <option value="Background Removal">Background Removal</option>
+              <option value="Photo Retouching">Photo Retouching</option>
+              <option value="Image Masking">Image Masking</option>
+              <option value="Shadow Making">Shadow Making</option>
+              <option value="Ghost Mannequin">Ghost Mannequin</option>
+              <option value="Color Adjustment/ Color Variants">Color Adjustment/ Color Variants</option>
+              <option value="E-Commerce Image Edit">E-Commerce Image Edit</option>
+              <option value="Image Resizinge">Image Resizinge</option>
+            </select>
+          </div>
+            <div class="mb-3">
+                <label for="name" class="form-label px-2 fst-italic fs-5">Your Files (Max Size File 25mb)</label><br>
+                <input class="px-2" type="file" id="img" name="image2"style="" accept="image/*">
+              </div>
+          <div class="mb-3">
+            <label for="name" class="form-label px-2 fst-italic fs-5">Name <span style="color: red;">*</span></label>
+            <input type="text" placeholder="Name" class="form-control" style="height: 50px; border: 2px solid black;" id="name" name="name2"required>
+          </div>
+          <div class="mb-3">
+            <label for="number" class="form-label px-2 fst-italic fs-5">Number <span style="color: red;">*</span></label>
+            <input type="text" placeholder="Number" class="form-control" style="height: 50px; border: 2px solid black;" id="number" name="number2"required>
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label px-2 fst-italic fs-5">Email <span style="color: red;">*</span></label>
+            <input type="email" placeholder="Email"style="height: 50px; border: 2px solid black;" class="form-control" id="exampleInputEmail1" name="email2" aria-describedby="emailHelp">
+          </div>
+          
+          <div class="mb-3">
+            <label for="name" class="form-label px-2 fst-italic fs-5">Comment Or Message</label><br>
+            <textarea class="form-control "style="height: 50px; border: 2px solid black;" placeholder="Leave Your Thoughts" id="floatingTextarea" style="height: 160px;" name="comment2"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock  %}
